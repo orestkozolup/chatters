@@ -1,12 +1,11 @@
-import Button from '@mui/material/Button';
+import LoginForm from "@/components/molecules/login-form";
 
 const Auth = () => {
   return (
-    <div style={{ height: '100vh' }}>
-      Hello World from Auth page
-      <Button variant='contained'>Click!</Button>
+    <div style={{ height: "100vh" }}>
+      <LoginForm />
     </div>
-  )
-}
+  );
+};
 
 export default Auth;
