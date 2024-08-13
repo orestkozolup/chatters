@@ -2,8 +2,12 @@ export const styles = {
   root: {
     display: "flex",
     flexDirection: "column",
-    height: "200px",
     justifyContent: "space-around",
     maxWidth: "300px",
+    padding: "40px",
+  },
+  heading: {
+    display: "flex",
+    justifyContent: "space-around",
   },
 };
