@@ -3,7 +3,7 @@ import LoginForm from "@/components/molecules/login-form";
 
 const LoginPage = () => {
   return (
-    <AuthSection btnText="Login">
+    <AuthSection>
       <LoginForm />
     </AuthSection>
   );
