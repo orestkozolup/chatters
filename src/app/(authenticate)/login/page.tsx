@@ -1,11 +1,10 @@
-import AuthSection from "@/components/organisms/auth-section";
-import LoginForm from "@/components/molecules/login-form";
-import { loginAction } from "./loginActions";
+import AuthSection from "@/components/molecules/auth-section";
+import LoginForm from "@/components/organisms/login-form";
 
 const LoginPage = () => {
   return (
     <AuthSection>
-      <LoginForm loginAction={loginAction} />
+      <LoginForm />
     </AuthSection>
   );
 };

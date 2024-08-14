@@ -1,11 +1,10 @@
-import AuthSection from "@/components/organisms/auth-section";
-import RegisterForm from "@/components/molecules/register-form";
-import { registerAction } from "./registerActions";
+import AuthSection from "@/components/molecules/auth-section";
+import RegisterForm from "@/components/organisms/register-form";
 
 const RegisterPage = () => {
   return (
     <AuthSection>
-      <RegisterForm registerAction={registerAction} />
+      <RegisterForm />
     </AuthSection>
   );
 };
