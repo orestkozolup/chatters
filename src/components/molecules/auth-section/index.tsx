@@ -4,7 +4,6 @@ import Image from "next/image";
 
 import peopleImage from "../../../../public/images/people.png";
 import { styles } from "./styles";
-import { AuthModes } from "@/types";
 
 interface AuthSectionProps {
   children: React.ReactElement;

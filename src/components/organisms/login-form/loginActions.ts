@@ -1,5 +1,6 @@
 "use server";
 
+import { signIn } from "@/auth";
 import { LoginFormSchema } from "./validation";
 
 export async function loginAction(formData: FormData) {
@@ -14,6 +15,11 @@ export async function loginAction(formData: FormData) {
       errors: validatedFields.error.flatten().fieldErrors,
     };
   } else {
-    return {};
+    return {}
   }
+}
+
+export const handleClick = async ({}) => {
+  "use server"
+  await signIn('google');
 }

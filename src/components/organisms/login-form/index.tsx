@@ -3,7 +3,7 @@
 import Box from "@mui/material/Box";
 import Button from "@/components/atoms/button";
 import InputField from "@/components/atoms/input-field";
-import { loginAction } from "./loginActions";
+import { loginAction, handleClick } from "./loginActions";
 import { useState } from "react";
 import { styles } from "./styles";
 
@@ -27,27 +27,18 @@ const LoginForm: React.FC = (): React.ReactElement => {
     setIsSubmitting(false);
   };
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <Box sx={styles.root}>
-        <InputField
-          label="Email"
-          name="email"
-          error={error?.email?.[0]}
-          required
-        />
-        <InputField
-          label="Password"
-          name="password"
-          error={error?.password?.[0]}
-          required
-        />
-        <Button variant="contained" type="submit" disabled={isSubmitting}>
-          Login
-        </Button>
-      </Box>
-    </form>
-  );
+  // const handleClick = async () => {
+  //   "use server"
+  //   console.log("HERE1.1 start");
+  //   // try {
+  //   //   await signIn("google");
+  //   //   console.log("HERE1.2 success");
+  //   // } catch (e) {
+  //   //   console.log("HERE1.3 error", e);
+  //   // }
+  // }
+
+  return <button onClick={() => handleClick({})}>Signin with Google</button>;
 };
 
 export default LoginForm;

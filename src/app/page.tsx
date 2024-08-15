@@ -1,7 +1,8 @@
 export default function Home() {
+
   return (
     <main>
-      Hello world
+      Hello World from Chatters
     </main>
   );
 }
