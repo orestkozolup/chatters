@@ -43,3 +43,12 @@ https://www.youtube.com/watch?v=Cm6-3pVCPEI
 # firebase service account
 firebase-adminsdk-d0yho@chatters-7dcde.iam.gserviceaccount.com
 
+
+# Websocket considerations
+Websocket will be run on a separate Node.js server. Authentication to that server will be
+implemented using a custom JWT token. This token will be created on successful login to the
+app in the Next.js app. This approach is good, because it allows to identify the sender
+on Node.js server, and also removes dependency on Google token.
+Message write to the database will be performed on Next.js server which sends the message.
+So it can happen either simultaneously with sending websocket, or before or after that.
+
