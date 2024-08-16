@@ -1,5 +1,5 @@
 import TextField, { TextFieldVariants } from "@mui/material/TextField";
-import { ChangeEvent, forwardRef } from 'react';
+import { ChangeEvent } from "react";
 
 interface InputFieldPropsType {
   required: boolean;
@@ -9,20 +9,22 @@ interface InputFieldPropsType {
   variant?: TextFieldVariants;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => any;
   placeholder?: string;
+  inputRef?: React.Ref<HTMLInputElement>;
 }
 
-const InputField = forwardRef<HTMLInputElement, InputFieldPropsType>(({
+const InputField: React.FC<InputFieldPropsType> = ({
   label,
   required,
   name,
   error,
   onChange,
   variant = "filled",
-  placeholder
-}, ref): React.ReactElement => {
+  placeholder,
+  inputRef,
+}): React.ReactElement => {
   return (
     <TextField
-      inputRef={ref}
+      inputRef={inputRef}
       label={label}
       required={required}
       variant={variant}
@@ -33,8 +35,6 @@ const InputField = forwardRef<HTMLInputElement, InputFieldPropsType>(({
       placeholder={placeholder}
     />
   );
-});
-
-InputField.displayName = "InputField";
+};
 
 export default InputField;

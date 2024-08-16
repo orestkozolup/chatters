@@ -4,6 +4,8 @@ import InputField from "@/components/atoms/input-field";
 import Button from "@/components/atoms/button";
 import { useRef } from "react";
 
+import { searchUser } from "./searchUser";
+
 const UserSearch = () => {
 
 
@@ -12,15 +14,17 @@ const UserSearch = () => {
   const handleClick = async () => {
     const value = inputRef?.current?.value;
 
-    console.log('HERE7', value);
+    const user = await searchUser(value as string);
+
+    console.log('HERE7', user);
   }
 
   return (
     <>
       <InputField
-        ref={inputRef}
+        inputRef={inputRef}
         required={false}
-        placeholder="Username or email"
+        placeholder="Search by email"
       />
       <Button onClick={handleClick}>Search</Button>
     </>
