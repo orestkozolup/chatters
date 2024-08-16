@@ -2,6 +2,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../../../lib/authOptions";
 import { redirect } from "next/navigation";
 import { NextAuthOptions } from "next-auth";
+import UserSearch from "@/components/organisms/user-search";
 
 import { db } from "../../../lib/firestore"; // Use firebase-admin's db
 
@@ -49,7 +50,12 @@ const UsersPage = async () => {
   const userDoc = querySnapshot.docs[0];
   const res = userDoc.data();
 
-  return <div>Hello {res.name}!</div>;
+  return (
+    <>
+      <div>Hello {res.name}!</div>
+      <UserSearch />
+    </>
+  );
 };
 
 export default UsersPage;
