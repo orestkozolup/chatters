@@ -1,9 +1,8 @@
 "use server";
 
 import { db } from "../../../../lib/firestore";
-import { signOut } from "next-auth/react";
 
-export const handleDelete = async (email: string): Promise<void> => {
+export const deleteAccount = async (email: string): Promise<void> => {
   const snapshot = await db
     .collection("users")
     .where("email", "==", email)
@@ -15,7 +14,6 @@ export const handleDelete = async (email: string): Promise<void> => {
     // Get the document ID
     const userDocId = snapshot.docs[0].id;
 
-    signOut({ callbackUrl: 'http://localhost:3000/auth' });
     // Step 3: Delete the document
     await db.collection("users").doc(userDocId).delete();
   }
