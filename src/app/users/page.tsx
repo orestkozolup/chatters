@@ -3,6 +3,9 @@ import { authOptions } from "../../../lib/authOptions";
 import { redirect } from "next/navigation";
 import { NextAuthOptions } from "next-auth";
 import UserSearch from "@/components/organisms/user-search";
+import ChatCard from "@/components/atoms/chat-card";
+import { styles } from "./styles";
+import Box from "@mui/material/Box";
 
 import { db } from "../../../lib/firestore"; // Use firebase-admin's db
 
@@ -51,10 +54,12 @@ const UsersPage = async () => {
   const res = userDoc.data();
 
   return (
-    <>
+    <Box sx={styles.root}>
       <div>Hello {res.name}!</div>
       <UserSearch />
-    </>
+      <ChatCard userName={res.name} userImageSrc={res.image} active />
+      <ChatCard userName={res.name} userImageSrc={res.image} />
+    </Box>
   );
 };
 
