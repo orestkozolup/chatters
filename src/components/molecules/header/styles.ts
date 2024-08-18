@@ -4,5 +4,6 @@ export const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "10px 20px",
+    borderBottom: "1px solid black",
   },
 };

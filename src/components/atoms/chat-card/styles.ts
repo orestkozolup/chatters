@@ -3,21 +3,22 @@ export const styles = {
     display: "flex",
     width: "250px",
     padding: "10px 15px",
+    margin: "10px",
     boxSizing: "content-box",
-    backgroundColor: '#EAEAEA',
+    backgroundColor: "#EAEAEA",
     borderRadius: "30px",
     boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
   },
-
   activeRoot: {
-    backgroundColor: '#CCCCCC',
-    boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.2)"
+    backgroundColor: "#CCCCCC",
+    boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.2)",
   },
-
-  image: {
-    borderRadius: "50%",
-    overflow: "hidden",
-    objectFit: "cover",
+  imageContainer: {
+    "& img": {
+      borderRadius: "50%",
+      overflow: "hidden",
+      objectFit: "cover",
+    },
   },
   textContainer: {
     marginLeft: "15px",

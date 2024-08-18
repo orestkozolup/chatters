@@ -2,10 +2,11 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../../../lib/authOptions";
 import { redirect } from "next/navigation";
 import { NextAuthOptions } from "next-auth";
-import UserSearch from "@/components/organisms/user-search";
 import ChatCard from "@/components/atoms/chat-card";
 import { styles } from "./styles";
 import Box from "@mui/material/Box";
+
+import DrawerLayout from "@/components/templates/drawer-layout";
 
 // import { db } from "../../../lib/firestore"; // Use firebase-admin's db
 
@@ -53,15 +54,46 @@ const UsersPage = async () => {
   // const userDoc = querySnapshot.docs[0];
   // const res = userDoc.data();
 
-  const name = 'Name'; // res.name
-  const image = ''; // res.image
+  const name = "Name";
+  const image = "";
+  // const name = res.name;
+  // const image = res.image;
 
   return (
-    <Box sx={styles.root}>
-      <div>Hello {name}!</div>
-      <ChatCard userName={name} userImageSrc={image} active />
-      <ChatCard userName={name} userImageSrc={image} active={false} />
-    </Box>
+    // <Box sx={styles.root}>
+    //   <div>Hello {name}!</div>
+    //   <ChatCard userName={name} userImageSrc={image} active />
+    //   <ChatCard userName={name} userImageSrc={image} active={false} />
+    // </Box>
+
+    <DrawerLayout
+      drawerContent={
+        <>
+          <ChatCard userName={name} userImageSrc={image} active />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <ChatCard userName={name} userImageSrc={image} active={false} />
+        </>
+      }
+      pageContent={
+        <Box>
+          Please select a conversation or find a new user to chat with
+        </Box>
+      }
+    />
   );
 };
 

@@ -11,19 +11,21 @@ interface ChatCardProps {
 const ChatCard: React.FC<ChatCardProps> = ({
   userName,
   userImageSrc,
-  active = false
+  active = false,
 }): React.ReactElement => {
   const imageSrc = userImageSrc;
 
   return (
     <Box sx={{ ...styles.root, ...(active ? styles.activeRoot : {}) }}>
-      <Image
-        src={imageSrc}
-        alt="User image"
-        width={40}
-        height={40}
-        style={styles.image}
-      />
+      <Box sx={styles.imageContainer}>
+        <Image
+          src={imageSrc}
+          alt="User image"
+          width={40}
+          height={40}
+          // style={styles.image}
+        />
+      </Box>
       <Box sx={styles.textContainer}>
         <h4>{userName}</h4>
         <p style={styles.regularText}>LastMessage</p>
