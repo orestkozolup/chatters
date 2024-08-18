@@ -10,11 +10,11 @@ export const styles = {
     backgroundColor: "#EAEAEA",
     borderRadius: "30px",
     boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+    padding: "30px"
   },
   actionCard: {
     width: "50%",
     height: "50px",
-    padding: "30px"
   },
   userMainInfo: {
     display: "flex",

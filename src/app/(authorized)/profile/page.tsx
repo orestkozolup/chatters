@@ -5,10 +5,10 @@ import { authOptions } from "../../../../lib/authOptions";
 
 import Image from "next/image";
 import Box from "@mui/material/Box";
-import LogOutButton from "./log-out-button";
+import LogOutButton from "./LogOutButton";
+import DeleteAccountButton from "./DeleteAccountButton";
 
 import { styles } from "./styles";
-import { signOut } from "next-auth/react";
 
 const ProfilePage = async () => {
   const session = await getServerSession(authOptions as NextAuthOptions);
@@ -23,10 +23,6 @@ const ProfilePage = async () => {
   const userImageSrc = session?.user?.image || "";
   const userEmail = session?.user?.email || "";
 
-  const hangleLogOut = () => {
-    signOut();
-  };
-
   return (
     <Box sx={styles.root}>
       <Box sx={styles.card}>
@@ -40,7 +36,7 @@ const ProfilePage = async () => {
       </Box>
       <Box sx={styles.actionsContainer}>
         <LogOutButton />
-        <Box sx={{ ...styles.card, ...styles.actionCard }}>Delete account</Box>
+        <DeleteAccountButton email={userEmail} />
       </Box>
     </Box>
   );
