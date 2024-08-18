@@ -7,7 +7,7 @@ import ChatCard from "@/components/atoms/chat-card";
 import { styles } from "./styles";
 import Box from "@mui/material/Box";
 
-import { db } from "../../../lib/firestore"; // Use firebase-admin's db
+// import { db } from "../../../lib/firestore"; // Use firebase-admin's db
 
 const UsersPage = async () => {
   const session = await getServerSession(authOptions as NextAuthOptions);
@@ -16,49 +16,51 @@ const UsersPage = async () => {
     redirect("/");
   }
 
-  const usersRef = db.collection("users");
-  const query = usersRef.where("email", "==", session?.user?.email).limit(1); // Limit to 1 to get a single document
-  const querySnapshot = await query.get();
+  // const usersRef = db.collection("users");
+  // const query = usersRef.where("email", "==", session?.user?.email).limit(1); // Limit to 1 to get a single document
+  // const querySnapshot = await query.get();
 
-  if (querySnapshot.empty) {
-    // No matching documents
-    console.log("HERE1 No user found with this email.");
-    return <div>Hello User!</div>;
-  }
+  // if (querySnapshot.empty) {
+  //   // No matching documents
+  //   console.log("HERE1 No user found with this email.");
+  //   return <div>Hello User!</div>;
+  // }
 
   // --------------------- Writing message to sub-collection
-  const conversationRef = db.collection("conversations").doc("conversationId1");
+  // const conversationRef = db.collection("conversations").doc("conversationId1");
 
   // Add participants or other conversation data
-  await conversationRef.set({
-    participants: ["userId1", "userId2"],
-  });
+  // await conversationRef.set({
+  //   participants: ["userId1", "userId2"],
+  // });
 
   // Add a message to the sub-collection
-  const messageRef = conversationRef.collection("messages").doc("messageId1");
-  await messageRef.set({
-    senderId: "userId1",
-    timestamp: new Date(),
-    content: "Hello!",
-  });
+  // const messageRef = conversationRef.collection("messages").doc("messageId1");
+  // await messageRef.set({
+  //   senderId: "userId1",
+  //   timestamp: new Date(),
+  //   content: "Hello!",
+  // });
 
   // -------------------- Reading message from sub-collection
 
-  const snap = await messageRef.get();
+  // const snap = await messageRef.get();
 
-  if (snap.exists) {
-    console.log("HERE4", snap.data());
-  }
+  // if (snap.exists) {
+  //   console.log("HERE4", snap.data());
+  // }
 
-  const userDoc = querySnapshot.docs[0];
-  const res = userDoc.data();
+  // const userDoc = querySnapshot.docs[0];
+  // const res = userDoc.data();
+
+  const name = 'Name'; // res.name
+  const image = ''; // res.image
 
   return (
     <Box sx={styles.root}>
-      <div>Hello {res.name}!</div>
-      <UserSearch />
-      <ChatCard userName={res.name} userImageSrc={res.image} active />
-      <ChatCard userName={res.name} userImageSrc={res.image} />
+      <div>Hello {name}!</div>
+      <ChatCard userName={name} userImageSrc={image} active />
+      <ChatCard userName={name} userImageSrc={image} active={false} />
     </Box>
   );
 };
