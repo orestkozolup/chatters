@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "../../../lib/authOptions";
+import { authOptions } from "../../../../lib/authOptions";
 import { redirect } from "next/navigation";
 import { NextAuthOptions } from "next-auth";
 import ChatCard from "@/components/atoms/chat-card";
@@ -14,7 +14,7 @@ const UsersPage = async () => {
   const session = await getServerSession(authOptions as NextAuthOptions);
 
   if (!session) {
-    redirect("/");
+    redirect("/auth");
   }
 
   // const usersRef = db.collection("users");
@@ -48,7 +48,7 @@ const UsersPage = async () => {
   // const snap = await messageRef.get();
 
   // if (snap.exists) {
-  //   console.log("HERE4", snap.data());
+  //   console.log("HERE2", snap.data());
   // }
 
   // const userDoc = querySnapshot.docs[0];

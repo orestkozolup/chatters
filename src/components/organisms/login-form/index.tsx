@@ -29,12 +29,9 @@ const LoginForm: React.FC = (): React.ReactElement => {
 
   // const handleClick = async () => {
   //   "use server"
-  //   console.log("HERE1.1 start");
   //   // try {
   //   //   await signIn("google");
-  //   //   console.log("HERE1.2 success");
   //   // } catch (e) {
-  //   //   console.log("HERE1.3 error", e);
   //   // }
   // }
 

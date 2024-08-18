@@ -2,11 +2,11 @@ import React from "react";
 import Header from "@/components/molecules/header";
 import UserSearch from "@/components/organisms/user-search";
 
-interface UsersLayoutProps {
+interface AuthorizedLayoutProps {
   children: React.ReactElement;
 }
 
-const UsersLayout: React.FC<UsersLayoutProps> = ({ children }) => {
+const AuthorizedLayout: React.FC<AuthorizedLayoutProps> = ({ children }) => {
   return (
     <>
       <Header centralContent={<UserSearch />} />
@@ -15,4 +15,4 @@ const UsersLayout: React.FC<UsersLayoutProps> = ({ children }) => {
   );
 };
 
-export default UsersLayout;
+export default AuthorizedLayout;
