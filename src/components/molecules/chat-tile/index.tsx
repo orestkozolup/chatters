@@ -1,14 +1,15 @@
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import { styles } from "./styles";
+import Tile from "@/components/atoms/tile";
 
-interface ChatCardProps {
+interface ChatTileProps {
   userName: string;
   userImageSrc: string;
   active: boolean;
 }
 
-const ChatCard: React.FC<ChatCardProps> = ({
+const ChatTile: React.FC<ChatTileProps> = ({
   userName,
   userImageSrc,
   active = false,
@@ -16,22 +17,21 @@ const ChatCard: React.FC<ChatCardProps> = ({
   const imageSrc = userImageSrc;
 
   return (
-    <Box sx={{ ...styles.root, ...(active ? styles.activeRoot : {}) }}>
+    <Tile active={active}>
       <Box sx={styles.imageContainer}>
         <Image
           src={imageSrc}
           alt="User image"
           width={40}
           height={40}
-          // style={styles.image}
         />
       </Box>
       <Box sx={styles.textContainer}>
         <h4>{userName}</h4>
         <p style={styles.regularText}>LastMessage</p>
       </Box>
-    </Box>
+    </Tile>
   );
 };
 
-export default ChatCard;
+export default ChatTile;

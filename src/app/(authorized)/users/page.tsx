@@ -3,6 +3,8 @@ import { authOptions } from "../../../../lib/authOptions";
 import { redirect } from "next/navigation";
 import { NextAuthOptions } from "next-auth";
 import ChatCard from "@/components/atoms/chat-card";
+import ChatTile from "@/components/molecules/chat-tile";
+import AddContactTile from "@/components/molecules/add-contact-tile";
 import { styles } from "./styles";
 import Box from "@mui/material/Box";
 
@@ -69,29 +71,28 @@ const UsersPage = async () => {
     <DrawerLayout
       drawerContent={
         <>
-          <ChatCard userName={name} userImageSrc={image} active />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
-          <ChatCard userName={name} userImageSrc={image} active={false} />
+          <AddContactTile />
+          <ChatTile userName={name} userImageSrc={image} active />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ChatTile userName={name} userImageSrc={image} active={false} />
         </>
       }
       pageContent={
-        <Box>
-          Please select a conversation or find a new user to chat with
-        </Box>
+        <Box>Please select a conversation or find a new user to chat with</Box>
       }
     />
   );

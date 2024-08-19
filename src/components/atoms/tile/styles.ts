@@ -8,6 +8,10 @@ export const styles = {
     backgroundColor: "#EAEAEA",
     borderRadius: "30px",
     boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+    cursor: "pointer",
+    "&:hover": {
+      boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.2)",
+    },
   },
   activeRoot: {
     backgroundColor: "#CCCCCC",
