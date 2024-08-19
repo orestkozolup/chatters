@@ -17,8 +17,6 @@ const ProfilePage = async () => {
     redirect("/auth");
   }
 
-  console.log("HERE3", session);
-
   const userName = session?.user?.name || "User";
   const userImageSrc = session?.user?.image || "";
   const userEmail = session?.user?.email || "";
