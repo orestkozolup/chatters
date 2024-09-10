@@ -4,3 +4,8 @@ export interface User {
   image: string;
   email: string;
 }
+export interface Message {
+  senderId: string;
+  content: string;
+  timestamp: string;
+}

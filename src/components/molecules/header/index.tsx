@@ -2,10 +2,6 @@ import Box from "@mui/material/Box";
 import Image from "next/image";
 import peopleImage from "../../../../public/images/people.png";
 import { styles } from "./styles";
-
-import { getServerSession } from "next-auth";
-import { authOptions } from "../../../../lib/authOptions";
-import { NextAuthOptions } from "next-auth";
 import UserIconButton from "./UserIconButton";
 
 interface HeaderProps {
@@ -13,10 +9,8 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = async ({ centralContent }) => {
-  const session = await getServerSession(authOptions as NextAuthOptions);
-
-  const userName = session?.user?.name || "User";
-  const userImageSrc = session?.user?.image || "";
+  const userName = "User";
+  const userImageSrc = "";
 
   return (
     <Box sx={styles.root}>

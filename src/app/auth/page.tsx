@@ -1,26 +1,25 @@
 "use client";
-import { signIn, useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+
+import { auth, googleProvider, signInWithPopup } from "../../../lib/firestore";
+import { useRouter } from "next/navigation";
 
 export default function AuthPage() {
-  const { data: session } = useSession();
+  const router = useRouter();
 
-  if (session) {
-    redirect("/users");
-  }
+  const handleSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      router.push("/users");
+      console.log("HERE2", result);
+    } catch (error) {
+      console.log("HERE2e", error);
+    }
+  };
 
   return (
     <main>
       <h1>You are not logged in</h1>
-      <div>
-        <button
-          onClick={() =>
-            signIn("google", { callbackUrl: "http://localhost:3000/users" })
-          }
-        >
-          Sign in with Google
-        </button>
-      </div>
+      <button onClick={handleSignIn}>Sign in with Google</button>
     </main>
   );
 }

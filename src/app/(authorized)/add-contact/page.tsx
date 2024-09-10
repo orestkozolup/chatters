@@ -1,25 +1,16 @@
-import { getServerSession } from "next-auth";
-import { NextAuthOptions } from "next-auth";
-import { redirect } from "next/navigation";
-import { authOptions } from "../../../../lib/authOptions";
-
 import UserSearch from "@/components/organisms/user-search";
-
 import Box from "@mui/material/Box";
+import { ProtectedPage } from "@/components/organisms/protected-page";
 
-import { styles } from './styles';
+import { styles } from "./styles";
 
-const AddContactPage = async () => {
-  const session = await getServerSession(authOptions as NextAuthOptions);
-
-  if (!session) {
-    redirect("/auth");
-  }
-
+const AddContactPage = () => {
   return (
-    <Box sx={styles.root}>
-      <UserSearch />
-    </Box>
+    <ProtectedPage>
+      <Box sx={styles.root}>
+        <UserSearch />
+      </Box>
+    </ProtectedPage>
   );
 };
 

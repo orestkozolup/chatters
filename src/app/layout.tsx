@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SessionWrapper from "@/components/molecules/session-wrapper";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import { GlobalStateProvider } from "@/context/global-state-context";
@@ -20,16 +19,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <SessionWrapper>
-      <html lang="en">
-        <body className={inter.className}>
-          <AppRouterCacheProvider>
-            <ThemeProvider theme={theme}>
-              <GlobalStateProvider>{children}</GlobalStateProvider>
-            </ThemeProvider>
-          </AppRouterCacheProvider>
-        </body>
-      </html>
-    </SessionWrapper>
+    <html lang="en">
+      <body className={inter.className}>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>
+            <GlobalStateProvider>{children}</GlobalStateProvider>
+          </ThemeProvider>
+        </AppRouterCacheProvider>
+      </body>
+    </html>
   );
 }

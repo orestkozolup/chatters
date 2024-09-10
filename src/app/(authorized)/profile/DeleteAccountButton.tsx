@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import { styles } from "./styles";
 import { deleteAccount } from "./accountActions";
 import React from "react";
-import { signOut } from "next-auth/react";
+import { signOut, auth } from "../../../../lib/firestore";
 
 interface DeleteAccountButtonProps {
   email: string;
@@ -15,7 +15,7 @@ const DeleteAccountButton: React.FC<DeleteAccountButtonProps> = ({ email }) => {
 
   const handleClick = () => {
     deleteAccount(email);
-    signOut({ callbackUrl: 'http://localhost:3000/auth' });
+    signOut(auth);
   }
   return (
     <Box

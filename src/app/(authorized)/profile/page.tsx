@@ -1,42 +1,39 @@
-import { getServerSession } from "next-auth";
-import { NextAuthOptions } from "next-auth";
-import { redirect } from "next/navigation";
-import { authOptions } from "../../../../lib/authOptions";
-
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import LogOutButton from "./LogOutButton";
 import DeleteAccountButton from "./DeleteAccountButton";
+import { ProtectedPage } from "@/components/organisms/protected-page";
 
 import { styles } from "./styles";
 
 const ProfilePage = async () => {
-  const session = await getServerSession(authOptions as NextAuthOptions);
-
-  if (!session) {
-    redirect("/auth");
-  }
-
-  const userName = session?.user?.name || "User";
-  const userImageSrc = session?.user?.image || "";
-  const userEmail = session?.user?.email || "";
+  const userName = "User";
+  const userImageSrc = "";
+  const userEmail = "";
 
   return (
-    <Box sx={styles.root}>
-      <Box sx={styles.card}>
-        <Box sx={styles.userMainInfo}>
-          <Box sx={styles.imageContainer}>
-            <Image src={userImageSrc} alt="User image" width={80} height={80} />
+    <ProtectedPage>
+      <Box sx={styles.root}>
+        <Box sx={styles.card}>
+          <Box sx={styles.userMainInfo}>
+            <Box sx={styles.imageContainer}>
+              <Image
+                src={userImageSrc}
+                alt="User image"
+                width={80}
+                height={80}
+              />
+            </Box>
+            <h1 style={styles.nameContainer}>{userName}</h1>
           </Box>
-          <h1 style={styles.nameContainer}>{userName}</h1>
+          <p>{userEmail}</p>
         </Box>
-        <p>{userEmail}</p>
+        <Box sx={styles.actionsContainer}>
+          <LogOutButton />
+          <DeleteAccountButton email={userEmail} />
+        </Box>
       </Box>
-      <Box sx={styles.actionsContainer}>
-        <LogOutButton />
-        <DeleteAccountButton email={userEmail} />
-      </Box>
-    </Box>
+    </ProtectedPage>
   );
 };
 

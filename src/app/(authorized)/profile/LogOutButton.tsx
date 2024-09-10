@@ -1,13 +1,17 @@
 "use client";
 
 import Box from "@mui/material/Box";
+import { useRouter } from "next/navigation";
 
 import { styles } from "./styles";
-import { signOut } from "next-auth/react";
+import { signOut, auth } from "../../../../lib/firestore";
 
 const LogOutButton = () => {
+  const router = useRouter();
+
   const hangleLogOut = () => {
-    signOut();
+    signOut(auth);
+    router.push("/auth");
   };
 
   return (

@@ -52,3 +52,17 @@ on Node.js server, and also removes dependency on Google token.
 Message write to the database will be performed on Next.js server which sends the message.
 So it can happen either simultaneously with sending websocket, or before or after that.
 
+
+
+# TODO next
+0. Env variables !!!
+1. Save user to DB on login
+2. Fix finding users
+3. Fix sending and receiving messages
+4. Fix session and current user info - probably with GlobalStore
+5. Fix deleting user
+6. Fix UI layout
+7. Add loading state
+8. Add error handling
+9. Refactor
+10. Add live functionality
