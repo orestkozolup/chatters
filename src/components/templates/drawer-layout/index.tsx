@@ -15,7 +15,7 @@ const DrawerLayout: React.FC<DrawerLayoutProps> = ({
   return (
     <Box sx={styles.root}>
       <Box sx={styles.drawerContainer}>{drawerContent}</Box>
-      <Box>{pageContent}</Box>
+      <Box sx={styles.contentContainer}>{pageContent}</Box>
     </Box>
   );
 };

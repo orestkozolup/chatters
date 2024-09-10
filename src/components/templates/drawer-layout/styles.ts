@@ -5,5 +5,9 @@ export const styles = {
   },
   drawerContainer: {
     overflowY: "auto",
+    minWidth: "fit-content",
+  },
+  contentContainer: {
+    width: "100%",
   },
 };

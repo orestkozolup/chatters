@@ -10,12 +10,7 @@ import { useRouter } from "next/navigation";
 
 import { searchUser } from "./searchUser";
 import { styles } from "./styles";
-
-interface User {
-  name: string;
-  image: string;
-  email: string;
-}
+import { User } from "@/types";
 
 const UserSearch = () => {
   const [searchResult, setSearchResult] = useState<User | null>(null);
@@ -42,11 +37,14 @@ const UserSearch = () => {
       image: searchResult?.image,
       name: searchResult?.name,
       email: searchResult?.email,
-    };
+    } as User;
 
-    console.log("HERE2.1", payload);
     dispatch({
       type: "SET_CURRENT_CONVERSATION",
+      payload,
+    });
+    dispatch({
+      type: "ADD_CONVERSATION",
       payload,
     });
 

@@ -7,6 +7,7 @@ import ChatTile from "@/components/molecules/chat-tile";
 import AddContactTile from "@/components/molecules/add-contact-tile";
 import { styles } from "./styles";
 import { Conversation } from "./Conversation";
+import ConversationsList from "@/components/organisms/conversations-list";
 
 import DrawerLayout from "@/components/templates/drawer-layout";
 
@@ -56,39 +57,15 @@ const UsersPage = async () => {
   // const userDoc = querySnapshot.docs[0];
   // const res = userDoc.data();
 
-  const name = "Name";
-  const image = "";
   // const name = res.name;
   // const image = res.image;
 
   return (
-    // <Box sx={styles.root}>
-    //   <div>Hello {name}!</div>
-    //   <ChatCard userName={name} userImageSrc={image} active />
-    //   <ChatCard userName={name} userImageSrc={image} active={false} />
-    // </Box>
-
     <DrawerLayout
       drawerContent={
         <>
           <AddContactTile />
-          <ChatTile userName={name} userImageSrc={image} active />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
-          <ChatTile userName={name} userImageSrc={image} active={false} />
+          <ConversationsList />
         </>
       }
       pageContent={<Conversation />}
