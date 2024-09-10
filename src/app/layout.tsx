@@ -4,6 +4,7 @@ import "./globals.css";
 import SessionWrapper from "@/components/molecules/session-wrapper";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
+import { GlobalStateProvider } from "@/context/global-state-context";
 import theme from "@/theme";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,7 +24,9 @@ export default function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           <AppRouterCacheProvider>
-            <ThemeProvider theme={theme}>{children}</ThemeProvider>
+            <ThemeProvider theme={theme}>
+              <GlobalStateProvider>{children}</GlobalStateProvider>
+            </ThemeProvider>
           </AppRouterCacheProvider>
         </body>
       </html>

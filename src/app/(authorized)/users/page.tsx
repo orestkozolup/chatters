@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../../../../lib/authOptions";
 import { redirect } from "next/navigation";
 import { NextAuthOptions } from "next-auth";
-import ChatCard from "@/components/atoms/chat-card";
+i//mport ChatCard from "@/components/atoms/chat-card";
 import ChatTile from "@/components/molecules/chat-tile";
 import AddContactTile from "@/components/molecules/add-contact-tile";
 import { styles } from "./styles";
