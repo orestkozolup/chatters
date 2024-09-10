@@ -5,7 +5,6 @@ import { authOptions } from "../../../../lib/authOptions";
 
 import UserSearch from "@/components/organisms/user-search";
 
-import Image from "next/image";
 import Box from "@mui/material/Box";
 
 import { styles } from './styles';

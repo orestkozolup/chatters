@@ -2,11 +2,11 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../../../../lib/authOptions";
 import { redirect } from "next/navigation";
 import { NextAuthOptions } from "next-auth";
-i//mport ChatCard from "@/components/atoms/chat-card";
+//import ChatCard from "@/components/atoms/chat-card";
 import ChatTile from "@/components/molecules/chat-tile";
 import AddContactTile from "@/components/molecules/add-contact-tile";
 import { styles } from "./styles";
-import Box from "@mui/material/Box";
+import { Conversation } from "./Conversation";
 
 import DrawerLayout from "@/components/templates/drawer-layout";
 
@@ -91,9 +91,7 @@ const UsersPage = async () => {
           <ChatTile userName={name} userImageSrc={image} active={false} />
         </>
       }
-      pageContent={
-        <Box>Please select a conversation or find a new user to chat with</Box>
-      }
+      pageContent={<Conversation />}
     />
   );
 };

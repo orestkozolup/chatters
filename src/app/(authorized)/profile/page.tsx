@@ -7,7 +7,6 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import LogOutButton from "./LogOutButton";
 import DeleteAccountButton from "./DeleteAccountButton";
-import { Counter } from './Counter';
 
 import { styles } from "./styles";
 
@@ -24,7 +23,6 @@ const ProfilePage = async () => {
 
   return (
     <Box sx={styles.root}>
-      <Counter />
       <Box sx={styles.card}>
         <Box sx={styles.userMainInfo}>
           <Box sx={styles.imageContainer}>

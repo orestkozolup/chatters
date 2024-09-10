@@ -6,25 +6,22 @@ import Tile from "@/components/atoms/tile";
 interface ChatTileProps {
   userName: string;
   userImageSrc: string;
-  active: boolean;
+  onClick?: () => void;
+  active?: boolean;
 }
 
 const ChatTile: React.FC<ChatTileProps> = ({
   userName,
   userImageSrc,
+  onClick,
   active = false,
 }): React.ReactElement => {
   const imageSrc = userImageSrc;
 
   return (
-    <Tile active={active}>
+    <Tile active={active} onClick={onClick}>
       <Box sx={styles.imageContainer}>
-        <Image
-          src={imageSrc}
-          alt="User image"
-          width={40}
-          height={40}
-        />
+        <Image src={imageSrc} alt="User image" width={40} height={40} />
       </Box>
       <Box sx={styles.textContainer}>
         <h4>{userName}</h4>

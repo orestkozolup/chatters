@@ -1,13 +1,13 @@
 export interface GlobalState {
-  currentConversation: string;
+  currentConversation: object | null;
 }
 
 export type Action =
-  | { type: "SET_CURRENT_CONVERSATION"; payload: string }
+  | { type: "SET_CURRENT_CONVERSATION"; payload: object }
   | { type: "UNSET_CURRENT_CONVERSATION" };
 
 export const initialState: GlobalState = {
-  currentConversation: '',
+  currentConversation: null,
 };
 
 export const globalReducer = (
@@ -18,7 +18,7 @@ export const globalReducer = (
     case "SET_CURRENT_CONVERSATION":
       return { ...state, currentConversation: action.payload }
     case "UNSET_CURRENT_CONVERSATION":
-      return { ...state, currentConversation: '' }
+      return { ...state, currentConversation: null }
     default:
       return state;
   }
