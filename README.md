@@ -55,9 +55,10 @@ So it can happen either simultaneously with sending websocket, or before or afte
 
 
 # TODO next
-0. Env variables !!!
-1. Save user to DB on login
-2. Fix finding users
+0. Env variables !!! - DONE
+1. Save user to DB on login - DONE
+2. Fix finding users - DONE
+3. Fix user authorization state
 3. Fix sending and receiving messages
 4. Fix session and current user info - probably with GlobalStore
 5. Fix deleting user
